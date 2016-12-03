@@ -1,6 +1,6 @@
 - [Introduction](#introduction)
 	+ [Installing Bedrock](#installing-bedrock)
-    + [Scaffording Assely application](#scaffording-assely-application)
+    + [Scaffolding Assely application](#scaffolding-assely-application)
     + [Requiring packages](#requiring-packages)
     + [Autoloading application](#autoloading-application)
     + [Installing Composer dependences](#installing-composer-dependences)
@@ -16,12 +16,12 @@ The Assely framework perfectly integrates with [Bedrock](https://roots.io/bedroc
 
 Basically follow up the [Bedrock documentation](https://roots.io/bedrock/docs/installing-bedrock/). It is simple and well-explanatory.
 
-<a name="scaffording-assely-application"></a>
-### [Scaffording Assely application](#scaffording-assely-application)
+<a name="scaffolding-assely-application"></a>
+### [Scaffolding Assely application](#scaffolding-assely-application)
 
 [alert type="info"]This instruction use our [installer](https://github.com/assely/installer). However, detailed informations about other ways of creating new Assely applications you will find in [general installation documentation](#installing).[/alert]
 
-Now we can scafford our application. Bedrock holds all themes in `web/app/themes` folder. Go to that directory and run `assely new <project-name>` command to craft fresh project.
+Now we can scaffold our application. Bedrock holds all themes in `web/app/themes` folder. Go to that directory and run `assely new <project-name>` command to craft fresh project.
 
 ```bash
 cd web/app/themes
