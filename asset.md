@@ -92,7 +92,7 @@ Assets can have these statuses:
 - `to_do` - script has not yet been printed
 
 ```php
-Asset::get('jquery')->is('equeued');
+Asset::get('jquery')->is('enqueued');
 ```
 
 <a name="dispatch-areas"></a>
