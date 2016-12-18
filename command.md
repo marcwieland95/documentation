@@ -32,7 +32,7 @@ It requires two mandatory options:
 wp assely:make command Movies --signature=app:movies --method=fetch
 ```
 
-Command above will scafford `Movies` class inside `app\Console\Commands` directory. It also includes basic PHPDoc annotation to help you started.
+Command above will scaffold `Movies` class inside `app\Console\Commands` directory. It also includes basic PHPDoc annotation to help you started.
 
 ##### Command signature
 
