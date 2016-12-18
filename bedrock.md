@@ -36,15 +36,17 @@ assely new project-name
 
 Now, we will be working with Bedrock's `composer.json` file. Get back to the bedrock root folder and require the `assely/framework` package:
 
+[alert type="info"]We still in pre-alpha, so you need to use @dev until first beta release.[/alert]
+
 ```bash
-composer require assely/framework
+composer require assely/framework @dev
 ```
 
 .. or manualy add package entry to the require section in `composer.json` file.
 
 ```json
 "require": {
-    "assely/framework": "^0.1.0",
+    "assely/framework": "@dev"
 }
 ```
 
