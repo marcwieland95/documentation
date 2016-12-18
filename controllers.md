@@ -26,7 +26,7 @@ On the route match, the `index` method will be called on `App\Http\Controllers\P
 
 Next, we need a controller itself. Make new file with choosen class name and within `App\Http\Controllers` namespace.
 
-[alert type="info"]You can use `wp assely:make controller` commad to quickly scafford controllers.[/alert]
+[alert type="info"]You can use `wp assely:make controller` commad to quickly scaffold controllers.[/alert]
 
 ```php
 <?php

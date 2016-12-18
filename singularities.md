@@ -48,7 +48,7 @@ class Movie extends Posttype {
 <a name="registering-singularities"></a>
 ## [Registering Singularities](#registering-singularities)
 
-In order to register new singularities you need to add them inside `config/app.php` file. Each one have separated entry inside this file. Add singularity classname to the correct array. On start arrays already contains default singularities which are shiped with WordPress.
+In order to register new singularities you need to add them inside `config/singularities.php` file. Each one have separated entry inside this file. Add singularity classname to the correct array. On start arrays already contains default singularities which are shiped with WordPress.
 
 For example, you [created new post type](/docs/posttype#create) named `App\Posttypes\Movies`. To bootstrap this singularity, simply add his classname to the `posttypes` array:
 
@@ -123,14 +123,14 @@ public function arguments() {
 }
 ```
 
-For example, you have `App\Metaboxes\MovieDetails` with `movie-details` slug and `Field::datepicker('realase_date')` field.
+For example, you have `App\Metaboxes\MovieDetails` with `movie-details` slug and `Field::datepicker('release_date')` field.
 
 ```php
 use Field;
 
 public function fields() {
     return [
-        Field::datepicker('realase_date'),
+        Field::datepicker('release_date'),
         Field::text('director')
     ];
 }
@@ -140,7 +140,7 @@ The metadata for this singularity will be preserved something like this:
 
 | meta_key | meta_value |
 |---|---|
-| `movie-details` | `['realase_date' => '2016-06-06T00:00:00+00:00', 'director' => 'Gore Verbinski']` |
+| `movie-details` | `['release_date' => '2016-06-06T00:00:00+00:00', 'director' => 'Gore Verbinski']` |
 
 <a name="preserve-as-multiple-records"></a>
 ### [Preserve as multiple records](#preserve-as-multiple-records)
