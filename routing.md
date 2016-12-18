@@ -36,7 +36,7 @@ Route::any($condition, $callback);
 <a name="basic-routing"></a>
 ## [Basic Routing](#basic-routing)
 
-[alert type="info"]Basic Routing relies on [Rewrite API](https://codex.wordpress.org/Rewrite_API/add_rewrite_rule) and closes all of this messy code into one readable API. However, is recommended to know how it is working.[/alert]
+[alert type="info"]Basic Routing relies on [Rewrite API](https://codex.wordpress.org/Rewrite_API/add_rewrite_rule) and closes all of this messy code into one readable API. However, it's recommended to know how it is working.[/alert]
 
 [alert type="warning"]You have to take into account that plugins that heavy relies on WordPress default query may sometimes not work properly. For example, SEO may have hard time to setup valid meta tags for advanced custom routes.[/alert]
 
