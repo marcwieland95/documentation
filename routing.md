@@ -21,7 +21,7 @@ All application routes should be defined inside `app\Http\routes.php` file. This
 
 #### HTTP Methods
 
-You can register routes to respond for sepcifed or multiple HTTP methods.
+You can register routes to respond for specified or multiple HTTP methods.
 
 ```php
 Route::get($condition, $callback);
