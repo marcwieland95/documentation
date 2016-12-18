@@ -19,7 +19,7 @@ Basically follow up the [Bedrock documentation](https://roots.io/bedrock/docs/in
 <a name="scaffolding-assely-application"></a>
 ### [Scaffolding Assely application](#scaffolding-assely-application)
 
-[alert type="info"]This instruction use our [installer](https://github.com/assely/installer). However, detailed informations about other ways of creating new Assely applications you will find in [general installation documentation](#installing).[/alert]
+[alert type="info"]This instruction use our [installer](https://github.com/assely/installer). However, detailed informations about other ways of creating new Assely applications you will find in [general installation documentation](/docs/installation/).[/alert]
 
 Now we can scaffold our application. Bedrock holds all themes in `web/app/themes` folder. Go to that directory and run `assely new <project-name>` command to craft fresh project.
 
