@@ -48,7 +48,7 @@ class Movie extends Posttype {
 <a name="registering-singularities"></a>
 ## [Registering Singularities](#registering-singularities)
 
-In order to register new singularities you need to add them inside `config/app.php` file. Each one have separated entry inside this file. Add singularity classname to the correct array. On start arrays already contains default singularities which are shiped with WordPress.
+In order to register new singularities you need to add them inside `config/singularities.php` file. Each one have separated entry inside this file. Add singularity classname to the correct array. On start arrays already contains default singularities which are shiped with WordPress.
 
 For example, you [created new post type](/docs/posttype#create) named `App\Posttypes\Movies`. To bootstrap this singularity, simply add his classname to the `posttypes` array:
 
