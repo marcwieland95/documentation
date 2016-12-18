@@ -9,7 +9,7 @@
 
 The Assely framework provides bunch of ready to use WP-CLI commands, which help you develop and debug your application.
 
-[alert type="info"]You can create own custom commands dedicated for your application. Visit [Command](docs/command) documentation.[/alert]
+[alert type="info"]You can create own custom commands dedicated for your application. Visit [Command](/docs/command) documentation.[/alert]
 
 <a name="make-command"></a>
 #### [`wp assely:make`](#make-command)
