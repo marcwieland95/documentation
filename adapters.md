@@ -8,7 +8,7 @@
 - [Serializing Adapters](#serializing-adapters)
     + [Serializing to Array](#serializing-to-array)
     + [Serializing to JSON](#serializing-to-json)
-
+- [Accessing Original Adaptee](#accessing-original-adaptee)
 
 <a name="introduction"></a>
 ## [Introduction](#introduction)
@@ -189,4 +189,14 @@ Post::find(1)->toJson();
     (...)
 }
 */
+```
+
+<a name="accessing-original-adaptee"></a>
+## [Accessing Original Adaptee](#accessing-original-adaptee)
+
+There are some situations where you need to process source object. In this cases, you can simply get originally adapted object with `getAdaptee` getter.
+
+```php
+// Gets the WP_Post object
+Post::find(1)->getAdaptee();
 ```
