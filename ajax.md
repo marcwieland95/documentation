@@ -40,13 +40,41 @@ Ajax::listen($action, $callback, ['accessibility' => 'unauthorized']);
 <a name="actions-response"></a>
 ### [Action response](#actions-response)
 
-The actions response callbacks are your scope for action, but remember about one thing - you must return something from the callback.
+The response callbacks are your field for action. This is where you define what your AJAX actions do. However, remember one thing - you must return results from the callback.
 
-[alert type="info"]Responses, that returns Array or Collection, will automatically be converted to the JSON.[/alert]
+[alert type="info"]Responses, that returns `Array` or `Illuminate\Support\Collection`, will automatically be converted to the JSON.[/alert]
+
+```php
+Ajax::listen('five_latest_movies', function() {
+    return Post::type('movies')->query([
+        'posts_per_page' => '5',
+        'order' => 'DESC',
+        'orderby' => 'date',
+    ]);
+});
+```
+
+#### Response via Closure
+
+For simpler actions the closure may be entirely sufficient.
+
+```php
+Ajax::listen('action', function () {
+    return ['message' => 'Out of rum. Why? Why are we out of rum?'];
+});
+```
+
+Of course, closure arguments will be automatically resolved from the container.
+
+```php
+Ajax::listen('action', function (Posts $posts) {
+    return $posts->all();
+});
+```
 
 #### Response via Controller
 
-As same as routes, you can target your application controllers.
+As same as routes, you can also target your application controllers methods.
 
 ```php
 // app/Http/ajaxes.php
@@ -75,30 +103,12 @@ class HomeController extends Controller
 }
 ```
 
-#### Response via Closure
-
-For simpler actions the closure may be sufficient.
-
-```php
-Ajax::listen('action', function () {
-    return ['message' => 'Out of rum. Why? Why are we out of rum?'];
-});
-```
-
-Of course, closure arguments will be automatically resolved from the container.
-
-```php
-Ajax::listen('action', function (Posts $posts) {
-    return $posts->all();
-});
-```
-
 <a name="calling-actions-from-javascript"></a>
 ### [Calling actions from JavaScript](#calling-actions-from-javascript)
 
-Finally, we can reach actions from the front-end. As example we will use `jQuery.ajax()` to perform an asynchronous HTTP request to our action endpoint.
+Finally, we can reach actions from the frontend. As example we will use `jQuery.ajax()` to perform an asynchronous HTTP request to our action endpoint.
 
-[alert type="warning"]You have to pass nonce token with your ajax request, otherwise action will return error message.[/alert]
+[alert type="warning"]You have to pass nonce token with your AJAX request, otherwise action will return error message.[/alert]
 
 ```js
 jQuery.ajax({
@@ -120,7 +130,7 @@ jQuery.ajax({
 <a name="protecting-actions-from-csrf-with-nonces"></a>
 ### [Protecting actions from CSRF with nonces](#protecting-actions-from-csrf-with-nonces)
 
-Action calls must include nonce token for protecting against CSRF attacts. Along with action name pass `Assely.ajax.nonce` value in `nonce` named key.
+Action calls **must** include nonce token for protecting against CSRF attacts. Along with action name pass `Assely.ajax.nonce` value in `nonce` named key.
 
 ```js
 {
