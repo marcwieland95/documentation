@@ -12,18 +12,18 @@
 <a name="introduction"></a>
 ## [Introduction](#introduction)
 
-Singularities, this is how are named WordPress types of content in Assely framework. All of this types are grouped and unifed to common API. This way creating and managing your post types, taxonomies, metaboxes etc. is simple and intuitive. In this chapter you will learn how to create, register and use it inside your application.
+Singularities, this is how are named WordPress types of content in Assely framework. All of this types are grouped and unifed to a common API. This way creating and managing your post types, taxonomies, metaboxes etc. is simple and intuitive. In this chapter you will learn how to create, register and use it inside your application.
 
 <a name="creating-singularities"></a>
 ## [Creating Singularities](#creating-singularities)
 
-By default, each application singularity are stored inside own type-named directory. For example, post types can be found in `app\Posttypes` folder, taxonomies inside `app\Taxonomies`, and so on.
+By default, each application singularity are stored inside it's own type-named directory. For example, post types can be found in `app\Posttypes` folder, taxonomies inside `app\Taxonomies`, and so on.
 
 [alert type="info"]This organization is not required, as long as singularities are correctly registered and autoloaded by Composer.[/alert]
 
 ### Via console command
 
-Assely's WP-CLI commands can scafford singularities for you. Just type inside console `wp help assely:make` to see all available commands. List of all available you will find in [WP-CLI documentation](/docs/wp-cli).
+Assely's WP-CLI commands can scafford singularities for you. Just type inside console `wp help assely:make` to see all available commands. You will find a list of all available commands in [WP-CLI documentation](/docs/wp-cli).
 
 ```bash
 wp assely:make posttype Movies
@@ -33,7 +33,7 @@ wp assely:make taxonomy Genres --belongsto="App\Posttypes\Movies"
 
 ### Manually created class file
 
-When you do not have access to the WP-CLI, you need to create singularity manually. Make class that is extending base singularity and you are ready to go.
+When you do not have access to the WP-CLI, you need to create singularity manually. Make a class that is extending the base  singularity and you are ready to go.
 
 ```php
 namespace App\Posttypes;
@@ -48,9 +48,9 @@ class Movie extends Posttype {
 <a name="registering-singularities"></a>
 ## [Registering Singularities](#registering-singularities)
 
-In order to register new singularities you need to add them inside `config/singularities.php` file. Each one have separated entry inside this file. Add singularity classname to the correct array. On start arrays already contains default singularities which are shiped with WordPress.
+In order to register new singularities you need to add them inside `config/singularities.php` file. Each one have separated entry inside this file. Add singularity classname to the correct array. By default the arrays already contains default singularities which are shipped with WordPress.
 
-For example, you [created new post type](/docs/posttype#create) named `App\Posttypes\Movies`. To bootstrap this singularity, simply add his classname to the `posttypes` array:
+For example, you [created a new post type](/docs/posttype#create) named `App\Posttypes\Movies`. To bootstrap this singularity, simply add his classname to the `posttypes` array:
 
 ```php
 'posttypes' => [
