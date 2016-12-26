@@ -9,7 +9,7 @@
 <a name="introduction"></a>
 ## [Introduction](#introduction)
 
-Controllers oranize your application logic into classes to which you can refer directly from routes and ajaxes. All controllers are stored inside `app\Http\Controllers` directory.
+Controllers organize your application logic into classes to which you can refer directly from routes and ajaxes. All controllers are stored inside `app\Http\Controllers` directory.
 
 Each one controller should extend base `Assely\Routing\Controller` class in order to have access to addional properties like `Illuminate\Http\Request`.
 
@@ -24,7 +24,7 @@ Route::get('posttype:post', 'PostController@index');
 
 On the route match, the `index` method will be called on `App\Http\Controllers\PostController` class.
 
-Next, we need a controller itself. Make new file with choosen class name and within `App\Http\Controllers` namespace.
+Next, we need a controller itself. Make a new file with choosen class name and within `App\Http\Controllers` namespace.
 
 [alert type="info"]You can use `wp assely:make controller` commad to quickly scaffold controllers.[/alert]
 
