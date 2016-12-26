@@ -7,7 +7,8 @@
 <a name="commands"></a>
 ## [Commands](#commands)
 
-The Assely framework provides bunch of ready to use WP-CLI commands, which help you develop and debug your application.
+The Assely framework provides a bunch of ready to use WP-CLI commands, which help you develop and debug your application.
+Before running the commands below make sure to navigate into the WordPress root directory (like when using the WP-CLI).
 
 [alert type="info"]You can create own custom commands dedicated for your application. Visit [Command](/docs/command) documentation.[/alert]
 
