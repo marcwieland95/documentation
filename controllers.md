@@ -35,6 +35,7 @@ namespace App\Http\Controllers;
 
 use View;
 use Post;
+use Assely\Routing\Controller;
 
 class PostController extends Controller
 {
@@ -64,6 +65,7 @@ Controllers are resolved by service container, so you are able to type-hint depe
 namespace App\Http\Controllers;
 
 use View;
+use Assely\Routing\Controller;
 use App\Posttypes\Posts;
 
 class PostController extends Controller
@@ -99,6 +101,7 @@ You also can type-hint controller methods dependeces.
 namespace App\Http\Controllers;
 
 use View;
+use Assely\Routing\Controller;
 use App\Posttypes\Posts;
 use App\Taxonomies\Categories;
 
