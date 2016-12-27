@@ -16,7 +16,7 @@
 
 The Command component allows for convenient way to create custom commands for your application. It's wrapped around powerfull [WP-CLI](http://wp-cli.org), so you can bring into play it's all features.
 
-[alert type="info"]Framework provides bunch of ready to use commands. To view a list of all available commands, visit the [WP-CLI documentation page](/docs/wp-cli).[/alert]
+[alert type="info"]Framework provides a bunch of ready to use commands. To view a list of all available commands, visit the [WP-CLI documentation page](/docs/wp-cli).[/alert]
 
 <a name="creating-command"></a>
 ## [Creating Command](#creating-command)
