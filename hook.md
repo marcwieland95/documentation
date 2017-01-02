@@ -13,7 +13,7 @@
 <a name="introduction"></a>
 ## [Introduction](#introduction)
 
-Hooks, as the [definition](http://codex.wordpress.org/Glossary#Hook) says, are an events that call the action or filter functions, previously hooked to that events. In other words, [Hook API](http://codex.wordpress.org/Plugin_API) allows you to trigger yours application logic at specific times.
+Hooks, as the [definition](http://codex.wordpress.org/Glossary#Hook) says, are events that call the action or filter functions, previously hooked to that events. In other words, [Hook API](http://codex.wordpress.org/Plugin_API) allows you to trigger yours application logic at specific times.
 
 <a name="creating-hooks"></a>
 ## [Creating Hooks](#creating-hooks)
@@ -44,7 +44,7 @@ Hook::action($name, $callback);
 <a name="filter-hooks"></a>
 ### [Filter Hooks](#filter-hooks)
 
-Call `filter` method for creating an action. Codex has a comprehensive [filters reference list](http://codex.wordpress.org/Plugin_API/Filter_Reference).
+Call `filter` method for creating an action. The codex has a comprehensive [filters reference list](http://codex.wordpress.org/Plugin_API/Filter_Reference).
 
 ```php
 Hook::filter($name, $callback);
@@ -57,7 +57,7 @@ The Hook callback function can be defined in various ways. There is no recommend
 
 #### Method name
 
-To reference class method pass an array where first element is class instance and second is a method name.
+To reference a class method pass an array where the first element is a class instance and the second is a method name.
 
 ```php
 use Hook;
@@ -73,7 +73,7 @@ public function methodName {
 
 #### Closure
 
-Sometimes you may need the easiest solution. Passing `Closure` simply do the job.
+Sometimes you may need the easiest solution. Passing a `Closure` simply does the job.
 
 ```php
 Hook::action($name, function() {
@@ -83,7 +83,7 @@ Hook::action($name, function() {
 
 #### Function name
 
-An option is also a standard function.
+Another option is also a standard function.
 
 ```php
 function functionName() {

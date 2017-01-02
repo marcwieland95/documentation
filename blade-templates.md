@@ -14,7 +14,7 @@ The Assely framework fully utilizes Laravel Blade Templates Engine. Please visit
 <a name="wordpress-directives"></a>
 ## [WordPress Directives](#wordpress-directives)
 
-Assely framework brings few ready to use Blade Directives that facilitate some of WordPress standard templates functions.
+Assely framework brings a few ready to use Blade Directives that facilitate some of WordPress standard templates functions.
 
 <a name="head-action"></a>
 ### [Head Action](#head-action)
@@ -51,7 +51,7 @@ Directive for [wp_footer](https://codex.wordpress.org/Function_Reference/wp_foot
 @endcache
 ```
 
-It caching content of the directive. Read detailed description in [Cache chapter](/docs/cache#cache-blade-directive).
+It caches content inside the directive. Read detailed description in [Cache chapter](/docs/cache#cache-blade-directive).
 
 <a name="eval-shortcodes"></a>
 ### [Eval Shorcodes](#eval-shortcodes)
