@@ -24,7 +24,7 @@ By default, profiles are stored inside `app\Profiles` directory.
 
 ### Via console command
 
-Scafford profile with `wp assely:make profile` command.
+Scaffold profile with `wp assely:make profile` command.
 
 ```bash
 wp assely:make profile SocialProfiles

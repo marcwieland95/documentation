@@ -28,13 +28,13 @@ For Trellis, you have to login into Vagrant with `vagrant ssh` command and navig
 <a name="make-command"></a>
 ### [`wp assely:make`](#make-command)
 
-Helps scafford Assely application singularities.
+Helps scaffold Assely application singularities.
 
 <hr>
 
 #### Creating controllers
 
-Scaffords application controller to `app\Http\Controllers` directory.
+Scaffolds application controller to `app\Http\Controllers` directory.
 
 ```bash
 wp assely:make controller <classname>
@@ -44,7 +44,7 @@ wp assely:make controller <classname>
 
 #### Creating posttypes
 
-Scaffords application posttype to `app\Posttypes` directory.
+Scaffolds application posttype to `app\Posttypes` directory.
 
 ```bash
 wp assely:make posttype <classname>
@@ -58,7 +58,7 @@ wp assely:make posttype <classname>
 
 #### Creating taxonomies
 
-Scaffords application taxonomy to `app\Taxonomies` directory.
+Scaffolds application taxonomy to `app\Taxonomies` directory.
 
 ```bash
 wp assely:make taxonomy <classname>
@@ -73,7 +73,7 @@ wp assely:make taxonomy <classname>
 
 #### Creating metaboxes
 
-Scaffords application metabox to `app\Metaboxes` directory.
+Scaffolds application metabox to `app\Metaboxes` directory.
 
 ```bash
 wp assely:make metabox <classname>
@@ -88,7 +88,7 @@ wp assely:make metabox <classname>
 
 #### Creating commands
 
-Scaffords application command to `app\Console\Commands` directory.
+Scaffolds application command to `app\Console\Commands` directory.
 
 ```bash
 wp assely:make command <classname>

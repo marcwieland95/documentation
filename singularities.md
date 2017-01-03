@@ -23,7 +23,7 @@ By default, each application singularity are stored inside own type-named direct
 
 ### Via console command
 
-Assely's WP-CLI commands can scafford singularities for you. Just type inside console `wp help assely:make` to see all available commands. List of all available you will find in [WP-CLI documentation](/docs/wp-cli).
+Assely's WP-CLI commands can scaffold singularities for you. Just type inside console `wp help assely:make` to see all available commands. List of all available you will find in [WP-CLI documentation](/docs/wp-cli).
 
 ```bash
 wp assely:make posttype Movies

@@ -23,7 +23,7 @@ By default, metaboxes are stored inside `app\Metaboxes` directory.
 
 ### Via console command
 
-Scafford metabox with `wp assely:make metabox` command.
+Scaffold metabox with `wp assely:make metabox` command.
 
 ```bash
 wp assely:make metabox MoviesDetails
