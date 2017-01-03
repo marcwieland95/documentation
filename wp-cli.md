@@ -1,19 +1,32 @@
-- [Commands](#Commands)
+- [Introduction](#introduction)
+- [Usage](#usage)
+- [Commands](#commands)
     + [`wp assely:make`](#make-command)
     + [`wp assely:clear`](#clear-command)
     + [`wp assely:info`](#info-command)
     + [`wp assely:salts`](#salts-command)
 
+<a name="introduction"></a>
+## [Introduction](#introduction)
+
+The Assely framework provides a bunch of ready to use WP-CLI commands, which help you develop and debug your application.
+
+<a name="usage"></a>
+## [Usage](#usage)
+
+Before running the commands below make sure to navigate into the WordPress root directory (like when using the WP-CLI), otherwise they won't be available.
+
+[alert type="warning"]You should execute commands within the virtual machine, while using Vagrant.[/alert]
+
+For Trellis, you have to login into Vagrant with `vagrant ssh` command and navigate to the `/srv/www/<project-name>/current` directory.
+
 <a name="commands"></a>
 ## [Commands](#commands)
 
-The Assely framework provides a bunch of ready to use WP-CLI commands, which help you develop and debug your application.
-Before running the commands below make sure to navigate into the WordPress root directory (like when using the WP-CLI).
-
-[alert type="info"]You can create own custom commands dedicated for your application. Visit [Command](/docs/command) documentation.[/alert]
+[alert type="info"]You can also create own custom commands dedicated for your application. Visit [Command](/docs/command) documentation.[/alert]
 
 <a name="make-command"></a>
-#### [`wp assely:make`](#make-command)
+### [`wp assely:make`](#make-command)
 
 Helps scafford Assely application singularities.
 
@@ -88,7 +101,7 @@ wp assely:make command <classname>
 
 
 <a name="clear-command"></a>
-#### [`wp assely:clear`](#clear-command)
+### [`wp assely:clear`](#clear-command)
 
 Helps clear Assely application various caches.
 
@@ -127,7 +140,7 @@ wp assely:clear rewrites
 ```
 
 <a name="info-command"></a>
-#### [`wp assely:info`](#info-command)
+### [`wp assely:info`](#info-command)
 
 Provides various command which helps debugging your Assely application.
 
@@ -200,7 +213,7 @@ wp assely:info sidebars
 ```
 
 <a name="salts-command"></a>
-#### [`wp assely:salts`](#salts-command)
+### [`wp assely:salts`](#salts-command)
 
 Provides helper for managing WordPress salts.
 
