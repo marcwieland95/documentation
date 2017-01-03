@@ -139,7 +139,7 @@ public function columns()
 {
     return [
         Column::taxonomy('App\Taxonomies\Genres'),
-        Column::metabox('App\Metaboxes\MovieDetails', 'realase_date'),
+        Column::metabox('App\Metaboxes\MovieDetails', 'release_date'),
     ];
 }
 ```
@@ -376,7 +376,7 @@ Your posts may hold various metadata. The `meta` method helps you retrieve these
 It returns an `Illuminate\Support\Collection`, so you have flexible way to access it's values.
 
 ```html
-{{ $movie->meta('movie_details')->get('realase_date') }}
+{{ $movie->meta('movie_details')->get('release_date') }}
 ```
 
 <a name="retrieving-post-terms"></a>

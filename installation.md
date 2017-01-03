@@ -85,4 +85,4 @@ cd project-name
 composer install -o
 ```
 
-That's it! Activate your new theme and visit homepage. If everything went well, you should see welcome splash. Good job!
+That's it! Activate your new theme and visit homepage. If everything went well, you should see a welcome splash. Good job!

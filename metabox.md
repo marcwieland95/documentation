@@ -180,7 +180,7 @@ use Field;
 public function fields()
 {
     return [
-        Field::text('realase_date')
+        Field::text('release_date')
     ];
 }
 ```

@@ -159,5 +159,5 @@ In this case [example form above](#preserve-as-multiple-records) will be stored 
 
 | meta_key | meta_value |
 |---|---|
-| `realase_date` | `2016-06-06T00:00:00+00:00` |
+| `release_date` | `2016-06-06T00:00:00+00:00` |
 | `director` | `Gore Verbinski` |
