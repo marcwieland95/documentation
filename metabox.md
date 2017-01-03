@@ -149,6 +149,8 @@ public function arguments()
 
 Metabox must belong to one or multiple singularities. The `relation` method allows you to describe where matabox should be assigned. Use `belongsTo` method with array of singularity classnames as parameter.
 
+[alert type="info"]Metaboxes can be assigned to the Posts, Pages, Comments and all other registered Custom Posts.[/alert]
+
 ```php
 public function relation()
 {
