@@ -10,7 +10,7 @@
 
 The [Post Thumbnails](https://codex.wordpress.org/Post_Thumbnails) are an images that are chosen as the representative for post.
 
-Registering own thumbnails allows for creating addtional images sizes, beyond those shipped with WordPress.
+Registering own thumbnails allows for creating additional images sizes, beyond those shipped with WordPress.
 
 <a name="basics-of-thumbnails"></a>
 ## [Basics of thumbnails](#basics-of-thumbnails)
