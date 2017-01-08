@@ -233,10 +233,27 @@ Field::repeatable('repeat')->children([
 <a name="text"></a>
 ### [Text](#text)
 
-Adds text input.
+Adds simple text input. Perfect to store short strings.
+
+[attachment slug="fielder-text-field"]
 
 ```php
-Field::text($slug, $arguments = []);
+Field::text($slug, $arguments = [])
+```
+
+##### Example
+
+```php
+Field::text('text', [
+    'default' => 'Why is the rum gone?',
+    'description' => 'Asking the important question here.'
+])
+```
+
+##### Template usage
+
+```html
+<h2>{{ $post->meta('text') }}</h2>
 ```
 
 <a name="textarea"></a>
