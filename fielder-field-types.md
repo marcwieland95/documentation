@@ -203,31 +203,64 @@ Field::readonly($slug, $arguments = []);
 <a name="repeatable"></a>
 ### [Repeatable](#repeatable)
 
-Adds repeatable field that allows for creating infinite repeated group of fields.
+Adds repeatable field that allows for creating infinite repeated groups of fields.
+
+[attachment slug="fielder-repeatable-field"]
 
 ```php
 Field::repeatable($slug, $arguments = []);
 ```
 
-##### Adding children fields to repeatable field
+##### Example
 
 Simply call `children` method with array of fields as argument.
 
 ```php
 Field::repeatable('repeat')->children([
-    Field::text('text'),
-    Field::colorpicker('colorpicker'),
-]);
+    Field::colorpicker('colorpicker', [
+        'default' => '#009d76'
+    ])
+])
 ```
 
 Of course, repeatable fields **can be** infinitely nested. Yey!
 
 ```php
 Field::repeatable('repeat')->children([
+    Field::text('text'),
+
     Field::repeatable('infinitely')->children([
-        Field::text('text'),
-    ]);
-]);
+        Field::colorpicker('colorpicker')
+    ])
+])
+```
+
+##### Template usage
+
+The repetable field stores its children values as array. Just loop through with `@foreach` directive.
+
+```html
+<ul>
+    @foreach($post->meta('repeat') as $field)
+        <li style="color: {{ $field['colorpicker'] }}">
+            {{ $field['colorpicker'] }}
+        </li>
+    @endforeach
+</ul>
+```
+
+... or with multiple loops, in case of nested repeatable fields.
+
+```html
+@foreach($post->meta('repeat') as $group)
+    <h2>{{ $group['text'] }}</h2>
+
+    <ul>
+        @foreach($field['infinitely'] as $field)
+            <li>{{ $field['colorpicker'] }}</li>
+        @endforeach
+    </ul>
+@endforeach
 ```
 
 <a name="text"></a>
