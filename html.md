@@ -13,7 +13,7 @@
 <a name="introduction"></a>
 ## [Introduction](#introduction)
 
-The HTML serivce is fork of [Laravel HTML 4.2](https://laravel.com/docs/4.2/html) component. It provides various functions for rapidly building application forms.
+The HTML service is fork of [Laravel HTML 4.2](https://laravel.com/docs/4.2/html) component. It provides various functions for rapidly building application forms.
 
 <a name="opening-a-form"></a>
 ## [Opening A Form](#opening-a-form)
