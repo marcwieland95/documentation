@@ -111,7 +111,7 @@ class MovieDetails extends Metabox
 <a name="registering-metabox"></a>
 ### [Registering metabox](#registering-metabox)
 
-All metaboxs are registered in the `config/app.php` configuration file. This file contains a `metaboxes` array where you can add your newly created custom metaboxes.
+All metaboxes are registered in the `config/singularities.php` configuration file. This file contains a `metaboxes` array where you can add your newly created custom metaboxes.
 
 ```php
 'metaboxs' => [
