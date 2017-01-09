@@ -123,7 +123,7 @@ public function arguments() {
 }
 ```
 
-For example, you have `App\Metaboxes\MovieDetails` with `movie-details` slug and `Field::datepicker('release_date')` field.
+For example, you have `App\Metaboxes\MovieDetails` with `movie_details` slug and `Field::datepicker('release_date')` field.
 
 ```php
 use Field;
@@ -140,7 +140,7 @@ The metadata for this singularity will be preserved something like this:
 
 | meta_key | meta_value |
 |---|---|
-| `movie-details` | `['release_date' => '2016-06-06T00:00:00+00:00', 'director' => 'Gore Verbinski']` |
+| `movie_details` | `['release_date' => '2016-06-06T00:00:00+00:00', 'director' => 'Gore Verbinski']` |
 
 <a name="preserve-as-multiple-records"></a>
 ### [Preserve as multiple records](#preserve-as-multiple-records)

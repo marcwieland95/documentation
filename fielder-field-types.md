@@ -27,40 +27,50 @@ Reference list of predefined custom fields to use with Assely framework.
 <a name="checkboxes"></a>
 ### [Checkboxes](#checkboxes)
 
-Adds multiple checkbox inputs.
+Adds field with list of checkable inputs.
+
+[attachment slug="fielder-checkboxes-field"]
 
 ```php
 Field::checkboxes($slug, $arguments = []);
 ```
 
-##### Setting items
+##### Example
 
-Use `items` argument for defining checkboxes inputs. It accepts an array, where array key is checkbox name (that will be saved to the database) and array value is text displayed along with checkbox.
+Use `items` argument for defining checkbox inputs. It accepts an associative array, where array key is checkbox name (that will be saved to the database) and text value, which will be displayed along with checkbox.
 
 ```php
 Field::checkboxes('checkboxes', [
     'items' => [
-        'checkbox-1' => 'First checkbox',
-        'checkbox-2' => 'Second checkbox'
+        'rum' => 'Is the rum gone?',
+        'parley' => 'Parley?',
     ]
 ]);
 ```
 
-##### Setting default values
-
 You can set initial checkboxes values with `default` argument. It should contains array, where array key is checkbox slug and value is checkbox status.
 
 ```php
-Field::checkboxes('checkboxes', [
+Field::checkboxes('questions', [
     'items' => [
-        'checkbox-1' => 'First checkbox',
-        'checkbox-2' => 'Second checkbox',
+        'rum' => 'Is the rum gone?',
+        'parley' => 'Parley?',
     ],
     'default' => [
-        'checkbox-1' => true,
-        'checkbox-2' => false,
+        'rum' => false,
+        'parley' => true,
     ],
 ]);
+```
+
+##### Template usage
+
+The checkboxes field stores its items values as array of keys and booleans.
+
+```html
+@if(! $post->meta('questions.rum'))
+    <p>Why is rum always gone?</p>
+@endif
 ```
 
 <a name="code"></a>
@@ -241,7 +251,7 @@ The repetable field stores its children values as array. Just loop through with 
 
 ```html
 <ul>
-    @foreach($post->meta('repeat') as $field)
+    @foreach($post->get('repeat') as $field)
         <li style="color: {{ $field['colorpicker'] }}">
             {{ $field['colorpicker'] }}
         </li>
@@ -286,7 +296,7 @@ Field::text('text', [
 ##### Template usage
 
 ```html
-<h2>{{ $post->meta('text') }}</h2>
+<h2>{{ $term->meta('text') }}</h2>
 ```
 
 <a name="textarea"></a>
