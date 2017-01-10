@@ -26,15 +26,15 @@ By default, metaboxes are stored inside `app\Metaboxes` directory.
 Scaffold metabox with `wp assely:make metabox` command.
 
 ```bash
-wp assely:make metabox MoviesDetails
+wp assely:make metabox MovieDetails
 ```
 
 ##### Specifying slug
 
-This will create metabox with `moviesdetails` slug, but you can specify it with `--slug` option.
+This will create metabox with `moviedetails` slug, but you can specify it with `--slug` option.
 
 ```bash
-wp assely:make metabox MoviesDetails --slug="movies-details"
+wp assely:make metabox MovieDetails --slug="movie_details"
 ```
 
 ##### Specifying owners
@@ -42,7 +42,7 @@ wp assely:make metabox MoviesDetails --slug="movies-details"
 You can also define to which singularity this metabox belongs to. Enter it's classname to the `--belongsto` option.
 
 ```bash
-wp assely:make metabox MoviesDetails --belongsto="App\Posttypes\Movies"
+wp assely:make metabox MovieDetails --belongsto="App\Posttypes\Movies"
 ```
 
 ### Manually created class file
@@ -65,7 +65,7 @@ class MovieDetails extends Metabox
      *
      * @var string
      */
-    public $slug = 'movie-details';
+    public $slug = 'movie_details';
 
     /**
      * Describe metabox relationships.
