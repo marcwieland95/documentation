@@ -78,7 +78,7 @@ In the following part of this documentation you will find concrete examples how 
 
 Routes can be additional guarded with conditions. Conditioned routes will be resolved only when all its conditions meets. That way you can easily create routes for specific posts, pages etc.
 
-[alert type="info"]All available conditions you can find in [Codex](https://developer.wordpress.org/themes/basics/conditional-tags).[/alert]
+[alert type="info"]All available conditions and its aliases you can find in [WordpressConditions](https://github.com/assely/framework/blob/master/src/Assely/Routing/WordpressConditions.php#L12) class.[/alert]
 
 To set conditions on selected route, simply call `where` method with array of conditions as parameter.
 
@@ -92,7 +92,15 @@ Route::get('{name}', function($name) {
 
 [alert type="warning"]Caution! There are conditions that only work inside loop (e.g. `sticky`). They cannot be use as route counditions.[/alert]
 
-Route above will be only resolved on post with `hello-world` slug. Take a note, you can pass multiple condition values in array `'post' => [1, 'hello-world', 'Hello World!']`. Its can be id, slug or even title.
+Route above will be only resolved on post with `hello-world` slug. Take a note, you can pass multiple condition values in array `'post' => [2, 'sample-post', 'Hello World!']`. Its can be id, slug or even title.
+
+```php
+Route::get('{name}', function($name) {
+	//
+})->where([
+	'post' => [2, 'sample-post', 'Hello World!']
+]);
+```
 
 <a name="creating-routes"></a>
 ## [Creating Routes](#creating-routes)
@@ -125,6 +133,12 @@ Route::get('page/{paged}', function($paged) {
 ```php
 Route::get('{pagename}', function($pagename) {
 	//
+});
+```
+
+```php
+Route::get('(.+)/{pagename}', function($pagename) {
+    //
 });
 ```
 
