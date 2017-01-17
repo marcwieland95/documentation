@@ -130,17 +130,31 @@ Route::get('page/{paged}', function($paged) {
 
 #### Single Page
 
+Use `{pagename}` to target single pages.
+
 ```php
 Route::get('{pagename}', function($pagename) {
 	//
 });
 ```
 
+If you would like to target also children pages, add second route with simple regular expression before parameter.
+
 ```php
 Route::get('(.+)/{pagename}', function($pagename) {
     //
 });
 ```
+
+Want to target all parent pages and children pages with one route? Just modify a little regular expression from above.
+
+```php
+Route::get('(.+\/)?{pagename}', function($pagename) {
+    //
+});
+```
+
+Now, everything before `{pagename}` is optional, so both pages and children pages will be matched.
 
 #### Single custom type Post
 
