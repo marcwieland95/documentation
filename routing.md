@@ -136,16 +136,10 @@ Route::get('/', function() {
 
 #### Single Post
 
+The `{name}` parameter allows you to route to the view of single post.
+
 ```php
 Route::get('{name}', function($name) {
-	//
-});
-```
-
-#### Paginated list of Posts
-
-```php
-Route::get('page/{paged}', function($paged) {
 	//
 });
 ```
@@ -186,7 +180,15 @@ Route::get('movie/{name}', function($name) {
 });
 ```
 
-#### Paginated list of custom type Posts
+#### Paginated list of Posts
+
+```php
+Route::get('page/{paged}', function($paged) {
+	//
+});
+```
+
+#### Paginated list of Custom Type Posts
 
 ```php
 Route::get('movie/page/{paged}', function($name, $paged) {
