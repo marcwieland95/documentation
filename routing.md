@@ -4,6 +4,7 @@
     + [Route Parameters](#route-parameters)
     + [Route Conditions](#route-conditions)
 - [Creating Routes](#creating-routes)
+	+ [Routing Homepage](#routing-homepage)
     + [Routing Posttypes](#routing-posttypes)
     + [Routing Taxonomies](#routing-taxonomies)
     + [Routing Search Results](#routing-search-results)
@@ -109,8 +110,29 @@ As was said before, you have to use specific names for route properties. Router 
 
 This section contains list of all available routes, which comes with WordPress and don't require to register any of custom rewrite rules.
 
+<a name="routing-homepage"></a>
+### [Routing Homepage](#routing-homepage)
+
+Routing to the homepage is easy as pie:
+
+```php
+Route::get('/', function() {
+	//
+});
+```
+
+Your website uses a static page and you want a explicitly route? Narrow route from above with `front` condition.
+
+```php
+Route::get('/', function() {
+	//
+})->where([
+    'front' => true
+]);
+```
+
 <a name="routing-posttypes"></a>
-### [Routing posttypes](#routing-posttypes)
+### [Routing Posttypes](#routing-posttypes)
 
 #### Single Post
 
@@ -173,7 +195,7 @@ Route::get('movie/page/{paged}', function($name, $paged) {
 ```
 
 <a name="routing-taxonomies"></a>
-### [Routing taxonomies](#routing-taxonomies)
+### [Routing Taxonomies](#routing-taxonomies)
 
 #### Single Category
 
