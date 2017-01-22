@@ -86,8 +86,10 @@ This adapter represents WordPress menu entries.
 
 | Property | Alias for | Description |
 |---|---|---|
+| `active` | --- | Entry is currently viewed |
 | `attr` | attr_title | Entry title attribute |
 | `children` | --- | Collection of children entries |
+| `classes` | --- | Array of entry classes |
 | `description` | description | Entry description |
 | `id` | ID | Entry id |
 | `item_id` | object_id | Id of entry's item object |
