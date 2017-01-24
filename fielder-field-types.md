@@ -266,7 +266,7 @@ The repetable field stores its children values as array. Just loop through with 
     <h2>{{ $group['text'] }}</h2>
 
     <ul>
-        @foreach($field['infinitely'] as $field)
+        @foreach($group['infinitely'] as $field)
             <li>{{ $field['colorpicker'] }}</li>
         @endforeach
     </ul>
