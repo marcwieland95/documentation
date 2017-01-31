@@ -69,5 +69,5 @@ You may want to display sidebar only if contains any widgets. Before rendering s
     <div class="sidebar--primary">
         {{ Sidebar::get('primary')->render() }}
     </div>
-@else
+@endif
 ```
