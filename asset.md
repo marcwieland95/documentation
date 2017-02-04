@@ -25,7 +25,7 @@ Providing application assets is really simple. Call `add` method on Asset facade
 [alert type="info"]Asset added with relative path will be searched in `public` directory.[/alert]
 
 ```php
-Asset::add('my-styles', ['path' => 'js/my-styles.css']);
+Asset::add('my-styles', ['path' => 'css/my-styles.css']);
 
 Asset::add('my-script', ['path' => 'js/my-script.js']);
 ```
