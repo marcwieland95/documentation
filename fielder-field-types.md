@@ -27,40 +27,50 @@ Reference list of predefined custom fields to use with Assely framework.
 <a name="checkboxes"></a>
 ### [Checkboxes](#checkboxes)
 
-Adds multiple checkbox inputs.
+Adds field with list of checkable inputs.
+
+[attachment slug="fielder-checkboxes-field"]
 
 ```php
 Field::checkboxes($slug, $arguments = []);
 ```
 
-##### Setting items
+##### Example
 
-Use `items` argument for defining checkboxes inputs. It accepts an array, where array key is checkbox name (that will be saved to the database) and array value is text displayed along with checkbox.
+Use `items` argument for defining checkbox inputs. It accepts an associative array, where array key is checkbox name (that will be saved to the database) and text value, which will be displayed along with checkbox.
 
 ```php
 Field::checkboxes('checkboxes', [
     'items' => [
-        'checkbox-1' => 'First checkbox',
-        'checkbox-2' => 'Second checkbox'
+        'rum' => 'Is the rum gone?',
+        'parley' => 'Parley?',
     ]
 ]);
 ```
 
-##### Setting default values
-
 You can set initial checkboxes values with `default` argument. It should contains array, where array key is checkbox slug and value is checkbox status.
 
 ```php
-Field::checkboxes('checkboxes', [
+Field::checkboxes('questions', [
     'items' => [
-        'checkbox-1' => 'First checkbox',
-        'checkbox-2' => 'Second checkbox',
+        'rum' => 'Is the rum gone?',
+        'parley' => 'Parley?',
     ],
     'default' => [
-        'checkbox-1' => true,
-        'checkbox-2' => false,
+        'rum' => false,
+        'parley' => true,
     ],
 ]);
+```
+
+##### Template usage
+
+The checkboxes field stores its items values as array of keys and booleans.
+
+```html
+@if(! $post->meta('questions.rum'))
+    <p>Why is rum always gone?</p>
+@endif
 ```
 
 <a name="code"></a>
@@ -203,40 +213,90 @@ Field::readonly($slug, $arguments = []);
 <a name="repeatable"></a>
 ### [Repeatable](#repeatable)
 
-Adds repeatable field that allows for creating infinite repeated group of fields.
+Adds repeatable field that allows for creating infinite repeated groups of fields.
+
+[attachment slug="fielder-repeatable-field"]
 
 ```php
 Field::repeatable($slug, $arguments = []);
 ```
 
-##### Adding children fields to repeatable field
+##### Example
 
 Simply call `children` method with array of fields as argument.
 
 ```php
 Field::repeatable('repeat')->children([
-    Field::text('text'),
-    Field::colorpicker('colorpicker'),
-]);
+    Field::colorpicker('colorpicker', [
+        'default' => '#009d76'
+    ])
+])
 ```
 
 Of course, repeatable fields **can be** infinitely nested. Yey!
 
 ```php
 Field::repeatable('repeat')->children([
+    Field::text('text'),
+
     Field::repeatable('infinitely')->children([
-        Field::text('text'),
-    ]);
-]);
+        Field::colorpicker('colorpicker')
+    ])
+])
+```
+
+##### Template usage
+
+The repetable field stores its children values as array. Just loop through with `@foreach` directive.
+
+```html
+<ul>
+    @foreach($post->get('repeat') as $field)
+        <li style="color: {{ $field['colorpicker'] }}">
+            {{ $field['colorpicker'] }}
+        </li>
+    @endforeach
+</ul>
+```
+
+... or with multiple loops, in case of nested repeatable fields.
+
+```html
+@foreach($post->meta('repeat') as $group)
+    <h2>{{ $group['text'] }}</h2>
+
+    <ul>
+        @foreach($group['infinitely'] as $field)
+            <li>{{ $field['colorpicker'] }}</li>
+        @endforeach
+    </ul>
+@endforeach
 ```
 
 <a name="text"></a>
 ### [Text](#text)
 
-Adds text input.
+Adds simple text input. Perfect to store short strings.
+
+[attachment slug="fielder-text-field"]
 
 ```php
-Field::text($slug, $arguments = []);
+Field::text($slug, $arguments = [])
+```
+
+##### Example
+
+```php
+Field::text('text', [
+    'default' => 'Why is the rum gone?',
+    'description' => 'Asking the important question here.'
+])
+```
+
+##### Template usage
+
+```html
+<h2>{{ $term->meta('text') }}</h2>
 ```
 
 <a name="textarea"></a>

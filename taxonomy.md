@@ -30,7 +30,7 @@ By default, taxonomies are stored inside `app\Taxonomies` directory.
 
 ### Via console command
 
-Scafford taxonomy with `wp assely:make taxonomy` command.
+Scaffold taxonomy with `wp assely:make taxonomy` command.
 
 ```bash
 wp assely:make taxonomy Genres

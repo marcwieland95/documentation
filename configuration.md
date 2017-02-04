@@ -13,7 +13,7 @@
 <a name="informations"></a>
 ### [Informations](#informations)
 
-As same as standard theme, we need to fill theme informations inside `styles.css` file. All necessary guides you will find in [Codex](https://codex.wordpress.org/Theme_Development#Theme_Stylesheet).
+As same as standard theme, we need to fill theme informations inside `style.css` file. All necessary guides you will find in [Codex](https://codex.wordpress.org/Theme_Development#Theme_Stylesheet).
 
 [alert type="danger"]`styles.css` file is responsible **only** for providing theme informations that are displayed in `Apperance > Themes`. Do not write in here any css declarations.[/alert]
 

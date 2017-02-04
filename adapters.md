@@ -5,10 +5,10 @@
     + [Menu Adaptee](#menu-adaptee)
     + [User Adaptee](#user-adaptee)
     + [Comment Adaptee](#comment-adaptee)
-- [Adapters serialization](#adapters-serialization)
+- [Serializing Adapters](#serializing-adapters)
     + [Serializing to Array](#serializing-to-array)
     + [Serializing to JSON](#serializing-to-json)
-
+- [Accessing Original Adaptee](#accessing-original-adaptee)
 
 <a name="introduction"></a>
 ## [Introduction](#introduction)
@@ -18,9 +18,7 @@ The Assely framework introduces Adapters for one important reason — to unify a
 <a name="adapters-properties"></a>
 ## [Adapter's properties](#adapters-properties)
 
-Do you remember how often you had go back to the Codex to recall under what property name this `id` of object is? Once it is `id`, some other time `ID`, even `term_id` and `comment_ID`. What a mess.
-
-That is one of the tiniest, but most annoing things. Now, you can forget about it.
+Do you remember how often you had var_dump to recall under what property name this `id` of object is? Once it is `id`, some other time `ID`, even `term_id` and `comment_ID`. What a mess. That is one of the tiniest, but most annoing things. Now, you can forget about it.
 
 <a name="post-adapter"></a>
 ### [Post Adaptee](#post-adaptee)
@@ -88,8 +86,10 @@ This adapter represents WordPress menu entries.
 
 | Property | Alias for | Description |
 |---|---|---|
+| `active` | --- | Entry is currently viewed |
 | `attr` | attr_title | Entry title attribute |
 | `children` | --- | Collection of children entries |
+| `classes` | --- | Array of entry classes |
 | `description` | description | Entry description |
 | `id` | ID | Entry id |
 | `item_id` | object_id | Id of entry's item object |
@@ -150,10 +150,10 @@ This adapter represents WordPress comment objects.
 | `type` | comment_type | Type of comment (null, pingback, trackback) |
 | `user_id` | user_id | Id of user, that added the comment |
 
-<a name="adapters-serialization"></a>
-## [Serializing Adapters](#adapters-serialization)
+<a name="serializing-adapters"></a>
+## [Serializing Adapters](#serializing-adapters)
 
-Adapters are easily convertible to array and JSON. For example, it is usefull especially when you want to pass your objects to the javascript.
+Adapters are easily convertible to Array and JSON. It's useful especially when you want to pass your objects to the frontend.
 
 <a name="serializing-to-array"></a>
 ### [Serializing to Array](#serializing-to-array)
@@ -161,9 +161,7 @@ Adapters are easily convertible to array and JSON. For example, it is usefull es
 The `toArray` method converts the adapter instance into a standard PHP `array`.
 
 ```php
-$post = Post::find(1);
-
-$post->toArray();
+Post::find(1)->toArray();
 
 /*
 [
@@ -182,9 +180,7 @@ $post->toArray();
 The `toJson` method converts the adapter instance into a JSON.
 
 ```php
-$post = Post::find(1);
-
-$post->toJson();
+Post::find(1)->toJson();
 
 /*
 {
@@ -195,4 +191,14 @@ $post->toJson();
     (...)
 }
 */
+```
+
+<a name="accessing-original-adaptee"></a>
+## [Accessing Original Adaptee](#accessing-original-adaptee)
+
+There are some situations where you need to process source object. In this cases, you can simply get originally adapted object with `getAdaptee` getter.
+
+```php
+// Gets the WP_Post object
+Post::find(1)->getAdaptee();
 ```

@@ -1,8 +1,24 @@
-- [Commands](#Commands)
+- [Introduction](#introduction)
+- [Usage](#usage)
+- [Commands](#commands)
     + [`wp assely:make`](#make-command)
     + [`wp assely:clear`](#clear-command)
     + [`wp assely:info`](#info-command)
     + [`wp assely:salts`](#salts-command)
+
+<a name="introduction"></a>
+## [Introduction](#introduction)
+
+The Assely framework provides a bunch of ready to use WP-CLI commands, which help you develop and debug your application.
+
+<a name="usage"></a>
+## [Usage](#usage)
+
+Before running the commands below make sure to navigate into the WordPress root directory (like when using the WP-CLI), otherwise they won't be available.
+
+[alert type="warning"]You should execute commands within the virtual machine, while using Vagrant.[/alert]
+
+For Trellis, you have to login into Vagrant with `vagrant ssh` command and navigate to the `/srv/www/<project-name>/current` directory.
 
 <a name="commands"></a>
 ## [Commands](#commands)
@@ -12,15 +28,15 @@ The Assely framework provides bunch of ready to use WP-CLI commands, which help 
 [alert type="info"]You can create own custom commands dedicated for your application. Visit [Command](/docs/command) documentation.[/alert]
 
 <a name="make-command"></a>
-#### [`wp assely:make`](#make-command)
+### [`wp assely:make`](#make-command)
 
-Helps scafford Assely application singularities.
+Helps scaffold Assely application singularities.
 
 <hr>
 
 #### Creating controllers
 
-Scaffords application controller to `app\Http\Controllers` directory.
+Scaffolds application controller to `app\Http\Controllers` directory.
 
 ```bash
 wp assely:make controller <classname>
@@ -30,7 +46,7 @@ wp assely:make controller <classname>
 
 #### Creating posttypes
 
-Scaffords application posttype to `app\Posttypes` directory.
+Scaffolds application posttype to `app\Posttypes` directory.
 
 ```bash
 wp assely:make posttype <classname>
@@ -44,7 +60,7 @@ wp assely:make posttype <classname>
 
 #### Creating taxonomies
 
-Scaffords application taxonomy to `app\Taxonomies` directory.
+Scaffolds application taxonomy to `app\Taxonomies` directory.
 
 ```bash
 wp assely:make taxonomy <classname>
@@ -59,7 +75,7 @@ wp assely:make taxonomy <classname>
 
 #### Creating metaboxes
 
-Scaffords application metabox to `app\Metaboxes` directory.
+Scaffolds application metabox to `app\Metaboxes` directory.
 
 ```bash
 wp assely:make metabox <classname>
@@ -74,7 +90,7 @@ wp assely:make metabox <classname>
 
 #### Creating commands
 
-Scaffords application command to `app\Console\Commands` directory.
+Scaffolds application command to `app\Console\Commands` directory.
 
 ```bash
 wp assely:make command <classname>
@@ -87,7 +103,7 @@ wp assely:make command <classname>
 
 
 <a name="clear-command"></a>
-#### [`wp assely:clear`](#clear-command)
+### [`wp assely:clear`](#clear-command)
 
 Helps clear Assely application various caches.
 
@@ -126,7 +142,7 @@ wp assely:clear rewrites
 ```
 
 <a name="info-command"></a>
-#### [`wp assely:info`](#info-command)
+### [`wp assely:info`](#info-command)
 
 Provides various command which helps debugging your Assely application.
 
@@ -199,7 +215,7 @@ wp assely:info sidebars
 ```
 
 <a name="salts-command"></a>
-#### [`wp assely:salts`](#salts-command)
+### [`wp assely:salts`](#salts-command)
 
 Provides helper for managing WordPress salts.
 

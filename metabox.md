@@ -23,18 +23,18 @@ By default, metaboxes are stored inside `app\Metaboxes` directory.
 
 ### Via console command
 
-Scafford metabox with `wp assely:make metabox` command.
+Scaffold metabox with `wp assely:make metabox` command.
 
 ```bash
-wp assely:make metabox MoviesDetails
+wp assely:make metabox MovieDetails
 ```
 
 ##### Specifying slug
 
-This will create metabox with `moviesdetails` slug, but you can specify it with `--slug` option.
+This will create metabox with `moviedetails` slug, but you can specify it with `--slug` option.
 
 ```bash
-wp assely:make metabox MoviesDetails --slug="movies-details"
+wp assely:make metabox MovieDetails --slug="movie_details"
 ```
 
 ##### Specifying owners
@@ -42,7 +42,7 @@ wp assely:make metabox MoviesDetails --slug="movies-details"
 You can also define to which singularity this metabox belongs to. Enter it's classname to the `--belongsto` option.
 
 ```bash
-wp assely:make metabox MoviesDetails --belongsto="App\Posttypes\Movies"
+wp assely:make metabox MovieDetails --belongsto="App\Posttypes\Movies"
 ```
 
 ### Manually created class file
@@ -65,7 +65,7 @@ class MovieDetails extends Metabox
      *
      * @var string
      */
-    public $slug = 'movie-details';
+    public $slug = 'movie_details';
 
     /**
      * Describe metabox relationships.
@@ -111,7 +111,7 @@ class MovieDetails extends Metabox
 <a name="registering-metabox"></a>
 ### [Registering metabox](#registering-metabox)
 
-All metaboxs are registered in the `config/app.php` configuration file. This file contains a `metaboxes` array where you can add your newly created custom metaboxes.
+All metaboxes are registered in the `config/singularities.php` configuration file. This file contains a `metaboxes` array where you can add your newly created custom metaboxes.
 
 ```php
 'metaboxs' => [
@@ -149,6 +149,8 @@ public function arguments()
 
 Metabox must belong to one or multiple singularities. The `relation` method allows you to describe where matabox should be assigned. Use `belongsTo` method with array of singularity classnames as parameter.
 
+[alert type="info"]Metaboxes can be assigned to the Posts, Pages, Comments and all other registered Custom Posts.[/alert]
+
 ```php
 public function relation()
 {
@@ -180,7 +182,7 @@ use Field;
 public function fields()
 {
     return [
-        Field::text('realase_date')
+        Field::text('release_date')
     ];
 }
 ```

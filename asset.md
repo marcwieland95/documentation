@@ -3,6 +3,7 @@
     - [Getting asset](#getting-asset)
     - [Loading asset](#loading-asset)
     - [Queuing asset](#queuing-asset)
+    - [Removing asset](#removing-asset)
     - [Asset status](#asset-status)
 - [Dispach areas](#dispatch-areas)
 - [Placement and media types](#placement-and-media-type)
@@ -78,6 +79,17 @@ Then, in the selected view or controller, simply get desired asset and call `add
 ```php
 // ..somewhere in the blade template or controller.
 Asset::get('my-script')->add();
+```
+
+<a name="removing-asset"></a>
+### [Removing asset](#removing-asset)
+
+Sometimes you want to remove assets that was already added, for example by third-party plugin. You can easily do that with `remove` call. Provide the slug and type of the removed script as method arguments.
+
+```php
+Asset::remove('third-party-script', ['type' => 'script']);
+
+Asset::remove('third-party-styles', ['type' => 'style']);
 ```
 
 <a name="asset-status"></a>

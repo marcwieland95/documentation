@@ -51,7 +51,7 @@ Column::metabox($metabox, $field);
 Example:
 
 ```php
-Column::metabox('App\Metaboxes\MovieDetails', 'realase_date');
+Column::metabox('App\Metaboxes\MovieDetails', 'release_date');
 ```
 
 <a name="taxonomy-column"></a>

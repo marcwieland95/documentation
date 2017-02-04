@@ -31,7 +31,7 @@ By default, post types are stored inside `app\Posttypes` directory.
 
 #### Via console command
 
-Scafford posttype with `wp assely:make posttype` command.
+Scaffold posttype with `wp assely:make posttype` command.
 
 ```bash
 wp assely:make posttype Movies
@@ -112,7 +112,7 @@ All posttypes are registered in the `config/singularities.php` configuration fil
 <a name="the-arguments-method"></a>
 ### [The Arguments method](#the-arguments-method)
 
-The `arguments` method must always return an array of post type registration parameters. You can use all of the default [WordPress parameters](https://codex.wordpress.org/Function_Reference/register_post_type#Parameters), but there is also some "framework specific".
+The `arguments` method must always return an array of post type registration parameters. You can use all of the default [WordPress parameters](https://codex.wordpress.org/Function_Reference/register_post_type#Parameters), but there are also some "framework specific".
 
 ```php
 public function arguments()
@@ -139,7 +139,7 @@ public function columns()
 {
     return [
         Column::taxonomy('App\Taxonomies\Genres'),
-        Column::metabox('App\Metaboxes\MovieDetails', 'realase_date'),
+        Column::metabox('App\Metaboxes\MovieDetails', 'release_date'),
     ];
 }
 ```
@@ -376,7 +376,7 @@ Your posts may hold various metadata. The `meta` method helps you retrieve these
 It returns an `Illuminate\Support\Collection`, so you have flexible way to access it's values.
 
 ```html
-{{ $movie->meta('movie_details')->get('realase_date') }}
+{{ $movie->meta('movie_details')->get('release_date') }}
 ```
 
 <a name="retrieving-post-terms"></a>

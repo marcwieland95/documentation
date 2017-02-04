@@ -32,7 +32,7 @@ The Assely Installer is recommended way to create new Assely applications. It ha
 ```bash
 composer global require "assely/installer"
 ```
-[alert type="warning"]Be sure to add the `$HOME/.composer/vendor/bin` directory in your system $PATH, so the `assely` command can be executed globally.[/alert]
+[alert type="warning"]Be sure to add the `$HOME/.composer/vendor/bin` directory in your system $PATH, so the `assely` command can be executed globally. (`export PATH="$PATH:$HOME/.composer/vendor/bin"`)[/alert]
 
 Afterwards you should have a global `assely` command. Now, you can create new Assely application by simply typing:
 
@@ -85,4 +85,4 @@ cd project-name
 composer install -o
 ```
 
-That's it! Activate your new theme and visit homepage. If everything went well, you should see welcome splash. Good job!
+That's it! Activate your new theme and visit homepage. If everything went well, you should see a welcome splash. Good job!
